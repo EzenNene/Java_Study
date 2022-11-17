@@ -1,7 +1,5 @@
 package quiz_06_Class;
 
-public class Quiz_19 {
-
 	class MyTv {
 		boolean isPowerOn;
 		int channel;
@@ -58,4 +56,3 @@ public class Quiz_19 {
 		
 	}
 
-}

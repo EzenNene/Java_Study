@@ -1,6 +1,5 @@
 package quiz_06_Class;
 
-import quiz_06_Class.Quiz_19.MyTv;
 
 public class Quiz_19_Ex {
 
