@@ -12,7 +12,7 @@ public class Quiz_23_BankApplication {
 		boolean run = true;
 		while (run) {
 			System.out.println("------------------------------------------");
-			System.out.println("1.계좌생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료 ");
+			System.out.println("1.계좌생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료");
 			System.out.println("------------------------------------------");
 			System.out.println("선택>");
 
@@ -70,7 +70,7 @@ public class Quiz_23_BankApplication {
 		System.out.println("--------------");
 		System.out.println("계좌목록");
 		System.out.println("--------------");
-		
+
 		for (int i = 0; i < accountArray.length; i++) {
 			Quiz_23_Account account = accountArray[i];
 			if (account != null) {
@@ -84,36 +84,69 @@ public class Quiz_23_BankApplication {
 		}
 	}
 
-
 	// 3. 예금
 	public static void deposit() {
 		System.out.println("--------------");
 		System.out.println("예금");
 		System.out.println("--------------");
-		
+
 		System.out.print("계좌번호: ");
 		String ano = scanner.next();
 		System.out.print("예금액: ");
 		int money = scanner.nextInt();
 
-		if(ano==accountArray[]) {
+		int index = -1;
+
+		for (int i = 0; i < accountArray.length; ++i) {
+			if (accountArray[i] != null && accountArray[i].getAno().equals(ano)) {
+				index = i;
+				break;
+			}
+		}
+
+		if (index == -1) {
 			System.out.println("계좌를 찾을 수 없습니다");
 		} else {
-			account.setBalance(account.getBalance() + money);
+			accountArray[index].setBalance(accountArray[index].getBalance() + money);
 			System.out.println(money + "원을 예금하였습니다");
-
 		}
-		
 	}
 
 	// 4. 출금
-	public static void withdraw() {}
+	public static void withdraw() {
+		System.out.println("--------------");
+		System.out.println("출금");
+		System.out.println("--------------");
+
+		System.out.print("계좌번호: ");
+		String ano = scanner.next();
+		System.out.print("출금액: ");
+		int money = scanner.nextInt();
+
+		int index = -1;
+
+		for (int i = 0; i < accountArray.length; ++i) {
+			if (accountArray[i] != null && accountArray[i].getAno().equals(ano)) {
+				index = i;
+				break;
+			}
+		}
+
+		if (index == -1) {
+			System.out.println("계좌를 찾을 수 없습니다");
+		} else {
+
+			if (accountArray[index].getBalance() - money < 0) {
+				System.out.println("잔액부족");
+			} else {
+
+				accountArray[index].setBalance(accountArray[index].getBalance() - money);
+				System.out.println(money + "원을 출금하였습니다");
+
+			}
+		}
+	}
 
 	// 5. AccountArray 배열에서 ano와 동일한 Account객체 찾는 역할을 한다
-	
-	
-	
-
-	
 
 }
