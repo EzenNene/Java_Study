@@ -1,13 +1,13 @@
 package quiz_06_Class;
 
-import java.util.Scanner;
+import java.util.Scanner; // 스캐너 라이브러리 불러오기
 
 public class Quiz_23_BankApplication {
 
 	private static Scanner scanner = new Scanner(System.in); // 스캐너 객체 생성
 	private static Quiz_23_Account accountArray[] = new Quiz_23_Account[100]; // 길이 100 Account 배열 생성
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { // 메인함수 제일 먼저 실행
 
 		boolean run = true;
 		while (run) {
@@ -45,15 +45,15 @@ public class Quiz_23_BankApplication {
 		System.out.println("--------------");
 
 		System.out.println("계좌번호: ");
-		String ano = scanner.next();
+		String ano = scanner.next(); // 스캐너로 입력받은 값 String 타입의 변수 ano에 대입
 
 		System.out.println("계좌주: ");
 		String owner = scanner.next();
 
 		System.out.println("초기입금액: ");
-		int balance = scanner.nextInt();
+		int balance = scanner.nextInt(); // 스캐너로 입력받은 값 int 타입의 변수 balance에 대입
 
-		Quiz_23_Account newAccount = new Quiz_23_Account(ano, owner, balance);
+		Quiz_23_Account newAccount = new Quiz_23_Account(ano, owner, balance); // 3개를 매개변수로 받는 객체 newAccount 생성
 		// 계좌만듬
 
 		for (int i = 0; i < accountArray.length; i++) {
