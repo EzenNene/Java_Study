@@ -1,10 +1,13 @@
 package CharacterMaking;
 
-public class Character implements Character_Interface {
+import java.util.Random;
+
+abstract class Character implements Character_Interface {
 	
 	//필드
-	protected String chaName;
-	protected String chaClass;	
+	int level = 1;
+	public String chaName;
+	public String chaClass;	
 	int classConstant;			// 직업상수
 
 	
@@ -16,8 +19,7 @@ public class Character implements Character_Interface {
 	
 	//메소드
 	
-	public void attack() {
-		
-	}
+	abstract public int getDamage();
+
 	
 }
