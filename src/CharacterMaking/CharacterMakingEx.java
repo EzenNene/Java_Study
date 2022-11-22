@@ -16,7 +16,12 @@ public class CharacterMakingEx {
 //		String chaName = "엘리시아";
 //		String chaClass = "Warrior";
 
+//		for(int i =0; i < 3; i++) {
+//			
+//		}
+		
 		Character character = null;
+	
 		while (character == null) {
 			System.out.println("캐릭터 이름 입력");
 			String chaName = scanner.nextLine();
@@ -47,7 +52,7 @@ public class CharacterMakingEx {
 		}
 
 	}
-
+	
 	private static Character makeCharacter(String chaName, String chaClass) {
 		if (chaClass.equals("Warrior")) {
 			return new Cha_Warrior(chaName, chaClass);
