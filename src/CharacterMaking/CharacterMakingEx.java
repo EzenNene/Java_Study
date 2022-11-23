@@ -23,9 +23,11 @@ public class CharacterMakingEx {
 		Character character = null;
 	
 		while (character == null) {
-			System.out.println("캐릭터 이름 입력");
+			System.out.println("====== 캐릭터 이름을 정하세요 ======" + "\n");
 			String chaName = scanner.nextLine();
-			System.out.println("캐릭터 직업 입력");
+			System.out.println("====== 캐릭터 직업 선택 ======");
+			System.out.println("1: 전사 2: 마법사");
+			System.out.println("==========================" + "\n");
 			String chaClass = scanner.nextLine();
 			
 			character = makeCharacter(chaName, chaClass);
@@ -51,13 +53,15 @@ public class CharacterMakingEx {
 			System.out.println("===========================");
 		}
 
-	}
+	} // 메인함수 끝
 	
-	private static Character makeCharacter(String chaName, String chaClass) {
-		if (chaClass.equals("Warrior")) {
+	private static Character makeCharacter(String chaName, int chaClass) {
+		if (chaClass == 1) {
 			return new Cha_Warrior(chaName, chaClass);
-		} else if (chaClass.equals("Wizard")) {
+		} else if (chaClass == 2) {
 			return new Cha_Wizard(chaName, chaClass);
+		} else if (chaClass == 3){
+			return new Cha_Thief(chaName, chaClass);
 		} else {
 			System.out.println("입력하신 직업을 다시 확인해 주세요");
 			return null;

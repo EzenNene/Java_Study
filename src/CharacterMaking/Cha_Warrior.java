@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Cha_Warrior extends Character {
 	
-	public Cha_Warrior (String chaName, String chaClass) {
+	public Cha_Warrior (String chaName, int chaClass) {
 		
 		super(chaName, chaClass);
 		super.classConstant = 100;
