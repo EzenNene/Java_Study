@@ -36,7 +36,7 @@ abstract class Character {
 	public void takeDamage(int damage) {
 		hp -= damage;
 		if(hp < 0) {
-			System.out.println(chaName + " 가 사망했습니다");
+			System.err.println(chaName + " 이(가) 사망했습니다");
 		}
 	}
 	
